@@ -1,0 +1,7 @@
+{
+  "name": "Dialog Sri Lanka Star Points Customer Dashboard",
+  "description": "Comprehensive customer loyalty dashboard for Dialog Sri Lanka Star Points members, featuring tier progression, points balance, vouchers, transaction history, and redemption.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
