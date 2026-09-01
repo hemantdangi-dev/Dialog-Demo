@@ -33,7 +33,7 @@ export const NotificationsDrawer: React.FC<NotificationsDrawerProps> = ({
     {
       id: 'notif-2',
       title: 'Double Star Points Weekend Active!',
-      message: 'Earn 2X bonus Star Points on all reloads over Rs. 500 until 31 August.',
+      message: 'Earn 2X bonus Star Points on all reloads over LKR 500 until 31 August.',
       time: '1 day ago',
       isUnread: true,
       type: 'offer',
@@ -41,7 +41,7 @@ export const NotificationsDrawer: React.FC<NotificationsDrawerProps> = ({
     {
       id: 'notif-3',
       title: '+500 Star Points Credited',
-      message: 'Successfully earned points from mobile reload of Rs. 1,000.',
+      message: 'Successfully earned points from mobile reload of LKR 1,000.',
       time: '2 days ago',
       isUnread: false,
       type: 'points',

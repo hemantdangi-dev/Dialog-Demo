@@ -48,6 +48,29 @@ export interface TierDefinition {
   benefits: string[];
 }
 
+export interface TierAssessmentBenefitItem {
+  id: string;
+  partner: string;
+  offer: string;
+  fullTitle: string;
+  type: 'dining' | 'groceries' | 'travel' | 'devices' | 'broadband' | 'fashion';
+}
+
+export interface TierAssessmentCategory {
+  categoryName: string;
+  subCategoryTitle: string;
+  unassignedBenefits: {
+    title: string;
+    description: string;
+    details?: string;
+  }[];
+  tierBenefits: {
+    silver: TierAssessmentBenefitItem[];
+    gold: TierAssessmentBenefitItem[];
+    platinum: TierAssessmentBenefitItem[];
+  };
+}
+
 export interface PointsSummaryMetric {
   id: string;
   title: string;
@@ -108,6 +131,19 @@ export interface VoucherItem {
   partnerLogoBg: string;
   terms: string[];
   pointsCost: number;
+  imageUrl?: string;
+  headline?: string;
+  subHeadline?: string;
+  bannerTag?: string;
+  highlights?: { icon: string; text: string }[];
+  stubTitle?: string;
+  stubValue?: string;
+  stubSubtext?: string;
+  barcodeText?: string;
+  validityDaysText?: string;
+  websiteUrl?: string;
+  howItWorks?: string[];
+  themeColor?: string;
 }
 
 export interface PromotionItem {
@@ -115,7 +151,9 @@ export interface PromotionItem {
   title: string;
   subtitle: string;
   description: string;
+  startDate?: string;
   endsDate: string;
+  campaignName?: string;
   ctaText: string;
   tag: string;
   tagColor: string;
@@ -123,6 +161,9 @@ export interface PromotionItem {
   category: 'Reloads' | 'Partners' | 'Weekend' | 'Bonus';
   terms: string[];
   imageIllustration: string;
+  bonusReward?: string;
+  channels?: string[];
+  minSpend?: string;
 }
 
 export interface TierBenefitCard {

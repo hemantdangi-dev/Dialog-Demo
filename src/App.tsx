@@ -114,7 +114,7 @@ export function App() {
       date: formattedDate,
       time: formattedTime,
       activity: 'Points Earned',
-      description: `Dialog Mobile Recharge (Rs. ${amount.toLocaleString()})`,
+      description: `Dialog Mobile Recharge (LKR ${amount.toLocaleString()})`,
       points: pointsEarned,
       isPositive: true,
       status: 'Completed',

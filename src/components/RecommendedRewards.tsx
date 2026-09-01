@@ -98,7 +98,7 @@ export const RecommendedRewards: React.FC<RecommendedRewardsProps> = ({
                 <div className="text-right">
                   <div className="text-[10px] uppercase font-bold text-gray-400">Value</div>
                   <div className="text-xs font-bold text-gray-700">
-                    Rs. {reward.originalLkrValue.toLocaleString()}
+                    LKR {reward.originalLkrValue.toLocaleString()}
                   </div>
                 </div>
               </div>

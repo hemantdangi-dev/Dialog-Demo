@@ -19,8 +19,8 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
 
   const faqs = [
     {
-      q: 'What is 1 Star Point worth in Sri Lankan Rupees?',
-      a: '1 Star Point is equivalent to exactly Rs. 1.00 LKR. Points can be used 1:1 for Dialog bill payments, prepaid reloads, or partner discounts.',
+      q: 'What is 1 Star Point worth in LKR?',
+      a: '1 Star Point is equivalent to exactly LKR 1.00. Points can be used 1:1 for Dialog bill payments, prepaid reloads, or partner discounts.',
     },
     {
       q: 'How do I earn Star Points?',

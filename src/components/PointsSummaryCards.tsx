@@ -21,7 +21,7 @@ export const PointsSummaryCards: React.FC<PointsSummaryCardsProps> = ({
       icon: Sparkles,
       iconBg: 'bg-red-50 text-[#ED1C24] border-red-100',
       borderAccent: 'hover:border-red-300',
-      tag: '1 Pt = Rs. 1.00',
+      tag: '1 Pt = LKR 1.00',
       tagBg: 'bg-red-50 text-[#ED1C24]',
     },
     {

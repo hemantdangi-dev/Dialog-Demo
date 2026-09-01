@@ -37,7 +37,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
   const [tasks, setTasks] = useState([
     {
       id: 'task-1',
-      title: 'Mobile Recharge (Rs. 500+)',
+      title: 'Mobile Recharge (LKR 500+)',
       desc: 'Completed on 28 Aug (+500 pts earned)',
       completed: true,
       icon: Smartphone,
@@ -90,7 +90,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
   const handleSpinWheel = () => {
     if (isSpinning) return;
     setIsSpinning(true);
-    const bonusPrizes = ['+500 Bonus Points', '2X Star Points Multiplier', 'Rs. 250 FoodCity Voucher', '500 Extra FlySMILES', '+1,000 Bonus Points'];
+    const bonusPrizes = ['+500 Bonus Points', '2X Star Points Multiplier', 'LKR 250 FoodCity Voucher', '500 Extra FlySMILES', '+1,000 Bonus Points'];
     const randomPrize = bonusPrizes[Math.floor(Math.random() * bonusPrizes.length)];
     const extraSpins = 5 * 360 + Math.floor(Math.random() * 360);
     setWheelRotation((prev) => prev + extraSpins);
@@ -139,7 +139,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
             </h3>
 
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-              Based on your Gold Tier reload habits, complete this 3-step loyalty sprint to unlock an instant <strong>+500 Star Points bonus</strong> and a <strong>Rs. 250 FoodCity Voucher</strong>.
+              Based on your Gold Tier reload habits, complete this 3-step loyalty sprint to unlock an instant <strong>+500 Star Points bonus</strong> and a <strong>LKR 250 FoodCity Voucher</strong>.
             </p>
 
             {/* Progress Bar & Milestone Tracker */}
@@ -169,7 +169,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
                 </div>
                 <div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Streak Completion Reward</div>
-                  <div className="text-sm font-black text-amber-300">+500 Pts + Rs. 250 Voucher</div>
+                  <div className="text-sm font-black text-amber-300">+500 Pts + LKR 250 Voucher</div>
                 </div>
               </div>
             </div>
@@ -298,7 +298,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
                 </div>
                 <div>
                   <span className="text-gray-500 block text-[10px] uppercase font-bold">Reward Tied to It</span>
-                  <strong className="text-sm font-black text-emerald-700">+500 Points + Rs. 250 Voucher</strong>
+                  <strong className="text-sm font-black text-emerald-700">+500 Points + LKR 250 Voucher</strong>
                 </div>
               </div>
 
@@ -315,7 +315,7 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
                     <div>
                       <strong className="text-gray-900 block">1. Points Earned vs. Purchase Frequency:</strong>
                       <span className="text-gray-600">
-                        High monthly recharge frequency (Rs. 2,850/month across 3 transactions), accumulating 12,450 Star Points.
+                        High monthly recharge frequency (LKR 2,850/month across 3 transactions), accumulating 12,450 Star Points.
                       </span>
                     </div>
                   </div>

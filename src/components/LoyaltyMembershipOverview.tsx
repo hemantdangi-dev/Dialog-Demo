@@ -100,9 +100,9 @@ export const LoyaltyMembershipOverview: React.FC<LoyaltyMembershipOverviewProps>
               <div className="mt-1 text-xs text-gray-400 flex items-center gap-2">
                 <span>Equivalent Cash Value:</span>
                 <strong className="text-white font-bold text-sm">
-                  Rs. {profile.pointsBalance.toLocaleString()}.00 LKR
+                  LKR {profile.pointsBalance.toLocaleString()}.00
                 </strong>
-                <span className="text-gray-500">(1 Pt = Rs. 1.00)</span>
+                <span className="text-gray-400">(1 Pt = LKR 1.00)</span>
               </div>
             </div>
 

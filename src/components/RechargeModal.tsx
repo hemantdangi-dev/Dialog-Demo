@@ -26,7 +26,7 @@ export const RechargeModal: React.FC<RechargeModalProps> = ({
   if (!isOpen) return null;
 
   const currentAmount = customAmount ? parseFloat(customAmount) || 0 : selectedAmount;
-  // Gold Tier earn rate: 50% points per Rs. (i.e. Rs. 1,000 = 500 points at 1.5x)
+  // Gold Tier earn rate: 50% points per LKR (i.e. LKR 1,000 = 500 points at 1.5x)
   const calculatedPoints = Math.round(currentAmount * 0.5);
 
   const handleRechargeSubmit = (e: React.FormEvent) => {
@@ -91,7 +91,7 @@ export const RechargeModal: React.FC<RechargeModalProps> = ({
                   Recharge Successful!
                 </h4>
                 <p className="text-xs text-gray-600 mt-1">
-                  Reload of <strong>Rs. {lastRechargeDetails.amount.toLocaleString()}</strong> completed for <strong>{mobileNumber}</strong>.
+                  Reload of <strong>LKR {lastRechargeDetails.amount.toLocaleString()}</strong> completed for <strong>{mobileNumber}</strong>.
                 </p>
               </div>
 
@@ -224,7 +224,7 @@ export const RechargeModal: React.FC<RechargeModalProps> = ({
                   type="submit"
                   className="w-full py-3 px-4 rounded-xl bg-[#ED1C24] hover:bg-[#C9141B] text-white text-xs sm:text-sm font-black shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <span>Pay Rs. {currentAmount.toLocaleString()} & Earn {calculatedPoints} Points</span>
+                  <span>Pay LKR {currentAmount.toLocaleString()} & Earn {calculatedPoints} Points</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

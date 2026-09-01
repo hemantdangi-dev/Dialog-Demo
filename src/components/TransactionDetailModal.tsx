@@ -95,7 +95,7 @@ export const TransactionDetailModal: React.FC<TransactionDetailModalProps> = ({
             {transaction.rechargeAmount && (
               <div className="flex items-center justify-between text-gray-600">
                 <span>Transaction Amount</span>
-                <span className="font-bold text-gray-900">Rs. {transaction.rechargeAmount.toLocaleString()}.00 LKR</span>
+                <span className="font-bold text-gray-900">LKR {transaction.rechargeAmount.toLocaleString()}.00</span>
               </div>
             )}
 

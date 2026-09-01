@@ -242,7 +242,7 @@ export const RecentTransactionsAndRecharge: React.FC<RecentTransactionsAndRechar
                   <div className="bg-white p-2.5 rounded-xl border border-gray-200/80 my-2">
                     <div className="text-[11px] text-gray-500">Recharge Amount</div>
                     <div className="text-base font-black text-gray-900">
-                      Rs. {rec.rechargeAmount.toLocaleString()}
+                      LKR {rec.rechargeAmount.toLocaleString()}
                     </div>
                   </div>
                 </div>

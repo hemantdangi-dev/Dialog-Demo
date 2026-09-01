@@ -32,7 +32,7 @@ export const RedeemPointsModal: React.FC<RedeemPointsModalProps> = ({
   const redemptionOptions = [
     {
       id: 'opt-1',
-      title: 'Rs. 500 Dialog Mobile Reload',
+      title: 'LKR 500 Dialog Mobile Reload',
       points: 500,
       category: 'Reloads',
       description: 'Direct credit to your 077 123 4567 Dialog connection.',
@@ -41,7 +41,7 @@ export const RedeemPointsModal: React.FC<RedeemPointsModalProps> = ({
     },
     {
       id: 'opt-2',
-      title: 'Rs. 1,000 Dialog Mobile Reload',
+      title: 'LKR 1,000 Dialog Mobile Reload',
       points: 1000,
       category: 'Reloads',
       description: 'Instant reload to your registered mobile connection.',
@@ -50,7 +50,7 @@ export const RedeemPointsModal: React.FC<RedeemPointsModalProps> = ({
     },
     {
       id: 'opt-3',
-      title: 'Rs. 1,000 Cargills FoodCity Voucher',
+      title: 'LKR 1,000 Cargills FoodCity Voucher',
       points: 1000,
       category: 'Partner Rewards',
       description: 'Supermarket e-Voucher redeemable at any outlet.',
@@ -59,7 +59,7 @@ export const RedeemPointsModal: React.FC<RedeemPointsModalProps> = ({
     },
     {
       id: 'opt-4',
-      title: 'Rs. 750 KFC & Pizza Hut Voucher',
+      title: 'LKR 750 KFC & Pizza Hut Voucher',
       points: 750,
       category: 'Partner Rewards',
       description: 'Delicious family dining voucher with instant QR.',
@@ -130,8 +130,8 @@ export const RedeemPointsModal: React.FC<RedeemPointsModalProps> = ({
               <span className="text-lg font-black text-white">{profile.pointsBalance.toLocaleString()} Pts</span>
             </div>
             <div className="text-right">
-              <span className="text-amber-200 text-[10px] uppercase font-bold block">Value (1 Pt = Rs. 1)</span>
-              <span className="text-sm font-bold text-white">Rs. {profile.pointsBalance.toLocaleString()}</span>
+              <span className="text-amber-200 text-[10px] uppercase font-bold block">Value (1 Pt = LKR 1)</span>
+              <span className="text-sm font-bold text-white">LKR {profile.pointsBalance.toLocaleString()}</span>
             </div>
           </div>
         </div>
