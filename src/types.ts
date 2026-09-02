@@ -161,9 +161,16 @@ export interface PromotionItem {
   category: 'Reloads' | 'Partners' | 'Weekend' | 'Bonus';
   terms: string[];
   imageIllustration: string;
+  imageUrl?: string;
+  bannerTagline?: string;
+  headlineHighlight?: string;
   bonusReward?: string;
   channels?: string[];
   minSpend?: string;
+  whyLoveIt?: { title: string; subtitle: string; iconName?: string }[];
+  eligiblePacks?: string[];
+  howItWorksSteps?: { step: number; title: string; desc: string; iconName?: string }[];
+  footerSlogan?: string;
 }
 
 export interface TierBenefitCard {

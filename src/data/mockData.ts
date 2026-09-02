@@ -21,6 +21,9 @@ import dialogBroadbandVoucherImg from '../assets/images/dialog_broadband_voucher
 import kfcVoucherImg from '../assets/images/kfc_starpoints_voucher_1788269790496.jpg';
 import cargillsVoucherImg from '../assets/images/cargills_voucher_1788269812366.jpg';
 import fashionBugVoucherImg from '../assets/images/fashion_bug_voucher_1788269839475.jpg';
+import promoOttBonanzaImg from '../assets/images/promo_ott_bonanza_1788323232735.jpg';
+import promoPhoneBonusImg from '../assets/images/promo_dialog_phone_bonus_1788323256108.jpg';
+import promoEarn2xPointsImg from '../assets/images/promo_earn_2x_points_1788323273552.jpg';
 
 export const INITIAL_CUSTOMER_PROFILE: CustomerProfile = {
   name: 'Priya Sharma',
@@ -603,24 +606,38 @@ export const PROMOTIONS: PromotionItem[] = [
   {
     id: 'PROMO-PAY-PHONE-BONUS',
     title: 'Star Points – Dialog Pay Phone Purchase Bonus',
-    subtitle: 'Earn up to 5,000 Bonus Star Points on Smartphone Purchases via Dialog Pay',
-    description: 'Purchase any 5G smartphone or device at Dialog Experience Centres, Dialog.lk online portal, or authorized Dialog Pay partners and earn up to 5,000 bonus Star Points with 0% installment plans.',
+    subtitle: 'Upgrade your phone on Dialog and pay with Dialog Pay to get LKR 2,000 OFF INSTANTLY!',
+    description: 'Upgrade your phone on Dialog and pay with Dialog Pay to get GET LKR 2,000 OFF INSTANTLY! Available at Dialog Experience Centres, Dialog.lk online portal, and authorized Dialog Pay partner touchpoints with 0% installment plans.',
     startDate: '01/09/2026',
     endsDate: '31/12/2026',
     campaignName: 'Dialog Pay Smartphone Purchase Campaign 2026',
     ctaText: 'View Device Offers',
     tag: 'Device Bonus',
     tagColor: 'bg-emerald-700 text-white',
-    multiplier: '+5,000 Bonus',
+    multiplier: 'LKR 2,000 OFF',
     category: 'Bonus',
-    bonusReward: 'Up to 5,000 Bonus Star Points + LKR 1,000 Accessory Voucher',
+    bonusReward: 'LKR 2,000 Instant Discount + Up to 5,000 Bonus Star Points',
     minSpend: 'LKR 50,000 on Smartphone Devices',
+    imageUrl: promoPhoneBonusImg,
+    bannerTagline: 'EXCLUSIVELY FOR STAR POINTS MEMBERS',
+    headlineHighlight: 'Upgrade your phone on Dialog and pay with Dialog Pay to get GET LKR 2,000 OFF INSTANTLY!',
+    whyLoveIt: [
+      { title: 'BUY', subtitle: 'Any smartphone on Dialog Experience Centre or Online', iconName: 'Smartphone' },
+      { title: 'PAY', subtitle: 'Using Dialog Pay digital payment or card installment', iconName: 'CreditCard' },
+      { title: 'GET LKR 2,000 OFF', subtitle: 'Instant price reduction applied at point of sale', iconName: 'Tag' }
+    ],
+    howItWorksSteps: [
+      { step: 1, title: '1. Upgrade', desc: 'Buy any smartphone on Dialog' },
+      { step: 2, title: '2. Pay', desc: 'Make payment using Dialog Pay' },
+      { step: 3, title: '3. Eligible', desc: 'Promotion is applied instantly' },
+      { step: 4, title: '4. Enjoy', desc: 'Get LKR 2,000 OFF instantly on your purchase' }
+    ],
+    footerSlogan: 'SMART UPGRADE. SMART PAYMENT. EXTRA SAVINGS WITH STAR POINTS.',
     channels: ['Dialog Experience Centres', 'Dialog.lk Online Store', 'Dialog Pay Partner Outlets'],
     terms: [
       'Valid on smartphone purchases settled via Dialog Pay between 01/09/2026 and 31/12/2026.',
-      'Tier 1 (LKR 50,000 - 99,999): Earn 2,000 Bonus Star Points.',
-      'Tier 2 (LKR 100,000+): Earn 5,000 Bonus Star Points + LKR 1,000 Original Accessories voucher.',
-      'Bonus Star Points credited to your account within 48 hours of invoice settlement.',
+      'Instant LKR 2,000 discount applied directly to qualifying invoice totals.',
+      'Earn bonus Star Points on all device payments made through Dialog Pay.',
       'Open to all verified Silver, Gold, and Platinum Dialog loyalty members.'
     ],
     imageIllustration: 'Smartphone'
@@ -628,86 +645,80 @@ export const PROMOTIONS: PromotionItem[] = [
   {
     id: 'PROMO-ANNUAL-RECHARGE-OTT',
     title: 'Annual Recharge OTT Bonanza',
-    subtitle: 'Get 3X Star Points + 12 Months Free Netflix / Dialog ViU Mini Subscription',
-    description: 'Opt for an Annual Prepaid Mobile Recharge or 12-Month Advance Postpaid Settlement and receive 3X Star Points multiplier, 20GB monthly bonus streaming data, and complimentary OTT streaming passes for Dialog ViU and Netflix.',
+    subtitle: 'Recharge or purchase any eligible Data Pack for a year and enjoy 3 months of endless entertainment!',
+    description: 'Opt for an Annual Prepaid Mobile Recharge or 12-month eligible Data Pack and enjoy 3 months of complimentary access to Dialog Play premium streaming entertainment (HBO GO, Prime Video, SonyLIV, Hungama Play).',
     startDate: '01/09/2026',
     endsDate: '30/11/2026',
     campaignName: 'Annual Mobile & Home Broadband OTT Super Pack 2026',
     ctaText: 'Recharge Annual Plan',
-    tag: 'Mega OTT Pack',
+    tag: 'Limited Time Offer',
     tagColor: 'bg-purple-700 text-white',
-    multiplier: '3X Points + OTT',
+    multiplier: '3 Months Free OTT',
     category: 'Reloads',
-    bonusReward: '3X Points Multiplier + Free 12-Month Netflix / ViU Pass',
-    minSpend: 'LKR 12,000 Annual Mobile / Broadband Pack',
+    bonusReward: '3 Months Dialog Play Premium + 3X Star Points Multiplier',
+    minSpend: '12-Month Eligible Annual Data Pack',
+    imageUrl: promoOttBonanzaImg,
+    bannerTagline: 'LIMITED TIME OFFER • EXCLUSIVE FOR STAR POINTS MEMBERS',
+    headlineHighlight: 'Recharge or purchase any eligible Data Pack for a year and enjoy 3 months of endless entertainment!',
+    whyLoveIt: [
+      { title: '1 YEAR', subtitle: 'Recharge or Data Pack validity guarantee', iconName: 'Calendar' },
+      { title: '3 MONTHS', subtitle: 'Access to Dialog Play Premium Content (HBO GO, Prime Video, SonyLIV)', iconName: 'Tv' },
+      { title: 'MORE ENTERTAINMENT', subtitle: 'More movies, shows, sports & kids content', iconName: 'Gift' }
+    ],
+    howItWorksSteps: [
+      { step: 1, title: 'Recharge', desc: 'Recharge or purchase any 12-month eligible Data Pack' },
+      { step: 2, title: 'Promotion', desc: 'Promotion applied automatically upon pack activation' },
+      { step: 3, title: 'Access Pass', desc: 'Get 3-Month Dialog Play streaming access via SMS code' },
+      { step: 4, title: 'Enjoy Non-Stop', desc: 'Enjoy non-stop movies, sports and entertainment!' }
+    ],
+    footerSlogan: 'MORE VALUE. MORE ENTERTAINMENT. ONLY WITH STAR POINTS.',
     channels: ['MyDialog App', 'Dialog Web Portal', 'Star Points Quick Recharge Portal'],
     terms: [
-      'Valid on 12-month advance reloads or bill settlements completed between 01/09/2026 and 30/11/2026.',
-      '3X Star Points multiplier credited automatically upon payment.',
-      'OTT voucher redemption codes sent via SMS within 2 hours of payment.',
-      'Includes 20GB monthly high-speed streaming data quota on Dialog 4G/5G network.',
-      'Exclusive promotion for Star Points Gold & Platinum members.'
+      'Valid on 12-month advance reloads or annual data pack activations completed between 01/09/2026 and 30/11/2026.',
+      'Dialog Play 3-month activation token delivered via SMS within 2 hours.',
+      'Includes premium movie & sports catalogue on Dialog 4G/5G.',
+      'Exclusive promotion for Star Points loyalty members.'
     ],
     imageIllustration: 'Tv'
   },
   {
     id: 'PROMO-01',
-    title: 'Double Star Points',
-    subtitle: 'Earn 2X Star Points on eligible Dialog reloads',
-    description: 'Reload LKR 500 or more via MyDialog App or online web portal and receive double Star Points credited within 24 hours.',
+    title: 'Earn 2X Star Points on Eligible Dialog Reloads',
+    subtitle: 'Recharge on selected Data Packs and earn DOUBLE the Star Points!',
+    description: 'Recharge on selected Daily, Weekly, Monthly, Video, and Gaming Data Packs and earn DOUBLE the Star Points credited instantly to your loyalty wallet.',
     startDate: '01/08/2026',
     endsDate: '31/08/2026',
-    campaignName: 'Digital Reload Accelerate 2026',
-    ctaText: 'View Offer',
-    tag: 'Limited Time',
+    campaignName: 'Double Points Data Pack Accelerate 2026',
+    ctaText: 'Recharge Data Pack',
+    tag: 'Double Points',
     tagColor: 'bg-red-500 text-white',
-    multiplier: '2X Points',
+    multiplier: '2X Star Points',
     category: 'Reloads',
+    bonusReward: '2X Multiplier on Daily, Weekly, Monthly, Video & Gaming Packs',
+    imageUrl: promoEarn2xPointsImg,
+    bannerTagline: 'EXCLUSIVELY FOR STAR POINTS MEMBERS • MORE RECHARGE. MORE REWARDS.',
+    headlineHighlight: 'Recharge on selected Data Packs and earn DOUBLE the Star Points!',
+    eligiblePacks: [
+      'Daily Data Packs',
+      'Weekly Data Packs',
+      'Monthly Data Packs',
+      'Video Data Packs',
+      'Gaming Data Packs'
+    ],
+    howItWorksSteps: [
+      { step: 1, title: '1 Recharge', desc: 'Recharge on eligible Data Packs via MyDialog App or Web' },
+      { step: 2, title: '2 Qualify', desc: 'Promotion is applied automatically at checkout' },
+      { step: 3, title: '3 Earn 2X', desc: 'Earn double Star Points credited within 24 hours' },
+      { step: 4, title: '4 Enjoy More', desc: 'More Points. More Rewards.' }
+    ],
+    footerSlogan: 'RECHARGE MORE. EARN MORE. ENJOY MORE. ONLY WITH STAR POINTS.',
+    channels: ['MyDialog App', 'Dialog Web Portal', 'USSD #141#', 'Self-Care Kiosks'],
     terms: [
-      'Valid on all online reloads over LKR 500.',
-      'Bonus points credited instantly.',
-      'Available for all Gold and Platinum tier members.'
+      'Valid on all eligible Daily, Weekly, Monthly, Video, and Gaming Data Pack reloads.',
+      'Double Star Points multiplier applied automatically on transaction value.',
+      'Available for all verified Silver, Gold, and Platinum tier loyalty members.'
     ],
     imageIllustration: 'Zap'
-  },
-  {
-    id: 'PROMO-02',
-    title: 'Weekend Rewards',
-    subtitle: 'Get additional rewards on selected transactions this weekend.',
-    description: 'Earn 500 bonus Star Points when spending LKR 3,000 or more at participating partner supermarket and dining chains on Saturday and Sunday.',
-    startDate: '01/08/2026',
-    endsDate: '30/08/2026',
-    campaignName: 'Weekend Partner Spends Promo',
-    ctaText: 'Explore Offer',
-    tag: 'Weekend Special',
-    tagColor: 'bg-amber-500 text-white',
-    multiplier: '+500 Bonus',
-    category: 'Weekend',
-    terms: [
-      'Valid on Saturday & Sunday transactions only.',
-      'Participating merchants: Cargills, Keells, KFC, Domino’s.',
-      'Must present Star Points registered mobile number at POS.'
-    ],
-    imageIllustration: 'Sparkles'
-  },
-  {
-    id: 'PROMO-03',
-    title: 'Partner Special',
-    subtitle: 'Enjoy exclusive Star Points benefits from selected partners.',
-    description: 'Convert your Star Points into SriLankan Airlines FlySMILES miles or luxury fashion vouchers with a 15% promotional bonus value.',
-    startDate: '15/08/2026',
-    endsDate: '15/09/2026',
-    campaignName: 'FlySMILES & Partner Miles Conversion 2026',
-    ctaText: 'Explore',
-    tag: 'Partner Exclusive',
-    tagColor: 'bg-indigo-600 text-white',
-    multiplier: '15% Extra',
-    category: 'Partners',
-    terms: [
-      'Minimum conversion batch: 1,000 Star Points.',
-      'Points conversion is instantaneous and non-reversible.'
-    ],
-    imageIllustration: 'Gift'
   }
 ];
 
