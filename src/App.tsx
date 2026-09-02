@@ -176,6 +176,60 @@ export function App() {
     );
   };
 
+  // 3.1 Claim Spin Reward from Gamification Wheel
+  const handleClaimSpinReward = (reward: { title: string; pointsBonus?: number; voucherName?: string; category: string; discountText?: string }) => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    const formattedTime = today.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+    if (reward.pointsBonus && reward.pointsBonus > 0) {
+      // Credit Points
+      setProfile((prev) => {
+        const newPoints = prev.pointsBalance + reward.pointsBonus!;
+        const newPointsToNext = Math.max(0, prev.nextTierThreshold - newPoints);
+        return {
+          ...prev,
+          pointsBalance: newPoints,
+          pointsToNextTier: newPointsToNext,
+        };
+      });
+
+      const refCode = `SP-SPIN-${Date.now().toString().slice(-4)}`;
+      // Add transaction
+      const newTxn: LoyaltyTransaction = {
+        id: `TXN-${Date.now()}`,
+        date: formattedDate,
+        time: formattedTime,
+        activity: 'Points Earned',
+        description: `Lucky Spin Reward: ${reward.title}`,
+        points: reward.pointsBonus,
+        isPositive: true,
+        status: 'Completed',
+        category: 'Promo',
+        referenceId: refCode,
+        merchant: 'Dialog Gamification Wheel',
+      };
+      setTransactions((prev) => [newTxn, ...prev]);
+    } else if (reward.voucherName) {
+      // Create and add voucher to user wallet
+      const newVoucher: VoucherItem = {
+        id: `VOUCH-SPIN-${Date.now()}`,
+        title: reward.voucherName,
+        partnerName: reward.category === 'Dining' ? 'KFC Sri Lanka' : reward.category === 'OTT' ? 'Dialog Play' : 'Cargills FoodCity',
+        partnerLogoBg: 'bg-emerald-600',
+        discountOrValue: reward.discountText || 'Special Perk',
+        pointsCost: 0,
+        validUntil: '30 Sep 2026',
+        category: reward.category === 'Dining' ? 'Dining' : reward.category === 'OTT' ? 'Entertainment' : 'Shopping',
+        status: 'available',
+        statusLabel: 'Available',
+        code: `DIA-${Math.floor(10000000 + Math.random() * 90000000)}`,
+        terms: ['Claimed via Star Points Lucky Spin gamification wheel', 'Present QR code at merchant POS or redeem on app.'],
+      };
+      setVouchers((prev) => [newVoucher, ...prev]);
+    }
+  };
+
   // 4. Save Profile
   const handleSaveProfile = (updated: Partial<CustomerProfile>) => {
     setProfile((prev) => ({ ...prev, ...updated }));
@@ -232,6 +286,8 @@ export function App() {
           onOpenRecharge={() => setIsRechargeOpen(true)}
           onOpenRedeem={() => setIsRedeemOpen(true)}
           onNavigateVouchers={() => handleNavTabClick('vouchers')}
+          onClaimSpinReward={handleClaimSpinReward}
+          onViewTierBenefits={() => setIsTierModalOpen(true)}
         />
 
         {/* 5. Loyalty Membership Overview (Main Hero Card) */}
