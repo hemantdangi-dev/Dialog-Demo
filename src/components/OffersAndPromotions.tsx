@@ -188,8 +188,8 @@ export const OffersAndPromotions: React.FC<OffersAndPromotionsProps> = ({
           </span>
         </div>
 
-        <span className="text-[11px] text-gray-400 font-mono">
-          Dialog Axiata PLC Loyalty Engine
+        <span className="text-[11px] text-gray-500 font-medium">
+          Dialog Axiata PLC • Star Points Rewards
         </span>
       </div>
     </section>

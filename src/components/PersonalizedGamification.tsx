@@ -197,7 +197,6 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
   const [wonRewardsHistory, setWonRewardsHistory] = useState<
     { prize: SpinWheelPrize; wonAt: string; status: 'claimed' | 'pending' }[]
   >([]);
-  const [showAnalysisModal, setShowAnalysisModal] = useState(false);
   const [loyaltyProgramTab, setLoyaltyProgramTab] = useState<'star-rewards' | 'club-vision'>('star-rewards');
 
   // Milestone points gap (Aligning with user script: "You are only 750 points away from your next reward level")
@@ -283,34 +282,22 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl border border-gray-200/90 shadow-sm overflow-hidden">
         {/* Section Header */}
-        <div className="p-5 sm:p-6 bg-gradient-to-r from-[#0B2545] via-[#0F3560] to-slate-900 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] uppercase tracking-wider">
-                Progression & Gamification
-              </span>
-              <span className="text-gray-300 text-xs hidden sm:inline">•</span>
-              <span className="text-gray-300 text-xs font-medium hidden sm:inline">
-                Interactive Loyalty Journey & Goal Tracking
-              </span>
-            </div>
-            <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
-              Customer Loyalty Progression & Rewards Engine
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl leading-relaxed">
-              Every recharge, eligible payment, and interaction contributes toward a visible goal — giving you a reason to remain continuously engaged.
-            </p>
+        <div className="p-5 sm:p-6 bg-gradient-to-r from-[#0B2545] via-[#0F3560] to-slate-900 text-white">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-black text-[10px] uppercase tracking-wider">
+              Progression & Gamification
+            </span>
+            <span className="text-gray-300 text-xs hidden sm:inline">•</span>
+            <span className="text-gray-300 text-xs font-medium hidden sm:inline">
+              Interactive Loyalty Journey & Goal Tracking
+            </span>
           </div>
-
-          {/* Quick Rationale Link */}
-          <button
-            type="button"
-            onClick={() => setShowAnalysisModal(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-amber-300 hover:text-white text-xs font-bold transition-colors cursor-pointer border border-white/15 shrink-0 self-start md:self-auto"
-          >
-            <BarChart3 className="w-4 h-4 text-amber-400" />
-            <span>Why Gamification?</span>
-          </button>
+          <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+            Customer Loyalty Progression & Rewards
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl leading-relaxed">
+            Every recharge, eligible payment, and interaction contributes toward a visible goal — giving you a reason to remain continuously engaged.
+          </p>
         </div>
 
         {/* The Three Essential Customer Questions (Where am I today? What have I earned? What can I unlock next?) */}
@@ -878,87 +865,6 @@ export const PersonalizedGamification: React.FC<PersonalizedGamificationProps> =
                   Save to My Vouchers & View Wallet
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ========================================================================= */}
-      {/* 4. RATIONALE & ENGAGEMENT INTELLIGENCE MODAL                              */}
-      {/* ========================================================================= */}
-      {showAnalysisModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-150"
-          onClick={() => setShowAnalysisModal(false)}
-        >
-          <div
-            className="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl border border-gray-100 animate-in zoom-in-95 duration-150 relative max-h-[90vh] flex flex-col text-gray-900"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header */}
-            <div className="bg-[#0B2545] text-white p-5 sm:p-6 relative">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 bg-amber-400/20 px-2 py-0.5 rounded">
-                  Progression & Gamification Rationale
-                </span>
-              </div>
-              <h3 className="text-xl font-black text-white">
-                The Progression & Gamification Strategy
-              </h3>
-              <p className="text-xs text-gray-300 mt-1">
-                How visible milestones turn single transactions into continuous loyalty
-              </p>
-            </div>
-
-            {/* Analysis Body */}
-            <div className="p-5 sm:p-6 overflow-y-auto flex-1 space-y-4 text-xs">
-              <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-950 space-y-1">
-                <span className="font-bold text-[11px] uppercase tracking-wider block text-amber-900">
-                  Strategic Objective
-                </span>
-                <p className="leading-relaxed">
-                  <strong>Every recharge, payment, or interaction contributes towards a visible goal.</strong> This gives the customer a reason to remain engaged with Dialog rather than treating each recharge as an isolated transaction.
-                </p>
-              </div>
-
-              {/* 3 Core Questions Overview */}
-              <div className="space-y-2.5">
-                <h5 className="font-bold text-gray-900 uppercase text-[11px] tracking-wider flex items-center gap-1.5">
-                  <BarChart3 className="w-3.5 h-3.5 text-[#ED1C24]" />
-                  The 3 Customer Pillars
-                </h5>
-
-                <div className="space-y-2">
-                  <div className="p-3 rounded-xl bg-gray-50 border border-gray-200">
-                    <strong className="text-gray-900 block">1. Where am I today?</strong>
-                    <span className="text-gray-600">
-                      Clear visibility into current tier (Gold Tier) and enrolled programmes (Star Rewards & Club Vision).
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-gray-50 border border-gray-200">
-                    <strong className="text-gray-900 block">2. What have I earned?</strong>
-                    <span className="text-gray-600">
-                      Clear accounting of accumulated points (12,450 active, 13,850 lifetime) and partner vouchers.
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-gray-50 border border-gray-200">
-                    <strong className="text-gray-900 block">3. What can I unlock next?</strong>
-                    <span className="text-gray-600">
-                      Actionable, high-urgency goal: <em>"You are only 750 points away from your next reward level."</em>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setShowAnalysisModal(false)}
-                className="w-full py-2.5 rounded-xl bg-gray-900 hover:bg-black text-white font-bold text-xs transition-colors cursor-pointer"
-              >
-                Close & Return to Progression Dashboard
-              </button>
             </div>
           </div>
         </div>

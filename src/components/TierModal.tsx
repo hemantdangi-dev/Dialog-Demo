@@ -159,7 +159,7 @@ export const TierModal: React.FC<TierModalProps> = ({
           <div className="bg-gray-50 p-4 rounded-2xl border border-gray-200 flex items-center justify-between text-xs text-gray-500">
             <div className="flex items-center gap-2">
               <Info className="w-4 h-4 text-gray-400 shrink-0" />
-              <span>Points thresholds are calculated on rolling member assessment rules.</span>
+              <span>Points thresholds and perks are updated based on your rolling account activity.</span>
             </div>
 
             <button

@@ -36,7 +36,6 @@ export const TierAssessmentMatrix: React.FC<TierAssessmentMatrixProps> = ({
   onSelectBenefit,
   onViewVouchers,
 }) => {
-  const [selectedRuleInfo, setSelectedRuleInfo] = useState(false);
   const [showFilterDropdown, setShowFilterDropdown] = useState(false);
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<'all' | 'experiences' | 'dining' | 'groceries' | 'travel' | 'devices'>('all');
   const [expandTruncatedText, setExpandTruncatedText] = useState(false);
@@ -110,15 +109,7 @@ export const TierAssessmentMatrix: React.FC<TierAssessmentMatrixProps> = ({
                 i
               </span>
               <span>
-                See the{' '}
-                <button
-                  type="button"
-                  onClick={() => setSelectedRuleInfo(true)}
-                  className="text-blue-600 hover:text-blue-800 underline font-semibold cursor-pointer transition-colors"
-                >
-                  auto-generated rule
-                </button>{' '}
-                that manages member tier assessment.
+                Overview of tier qualification thresholds and exclusive member benefits across Silver, Gold, and Platinum.
               </span>
             </div>
           </div>
@@ -441,109 +432,17 @@ export const TierAssessmentMatrix: React.FC<TierAssessmentMatrixProps> = ({
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>
-            Tier Assessment Status:{' '}
+            Tier Status:{' '}
             <strong className="text-gray-900 font-semibold">Active & Live</strong> (Continuous rolling evaluation)
           </span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            onClick={() => setSelectedRuleInfo(true)}
-            className="text-xs font-bold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 cursor-pointer transition-colors"
-          >
-            <span>View Assessment Engine Rule</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </button>
+        <div className="text-[11px] text-gray-500 font-medium">
+          Silver: 0 Pts • Gold: 25,000 Pts • Platinum: 50,000 Pts
         </div>
       </div>
 
-      {/* Modal 1: Auto-generated Rule Assessment Logic Modal */}
-      {selectedRuleInfo && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-xs animate-in fade-in"
-          onClick={() => setSelectedRuleInfo(false)}
-        >
-          <div
-            className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-100 p-6 space-y-4 animate-in zoom-in-95"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shadow-xs">
-                  <Layers className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-gray-900">
-                    Member Tier Assessment Rule Engine
-                  </h3>
-                  <span className="text-xs text-gray-500 font-mono">
-                    RULE-ID: STARPOINTS_EVAL_AUTO_RULE_2026
-                  </span>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setSelectedRuleInfo(false)}
-                className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-700 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="space-y-3.5 text-xs text-gray-700 leading-relaxed">
-              <p>
-                The Dialog Star Points rule engine runs an <strong>automated continuous assessment</strong> of member account balances and rolling transaction volume to assign tier eligibility:
-              </p>
-
-              <div className="bg-slate-50 rounded-2xl p-4 border border-gray-200 space-y-2.5 font-mono text-xs">
-                <div className="flex items-center justify-between pb-2 border-b border-gray-200">
-                  <span className="font-bold text-slate-800 flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-slate-400" />
-                    Silver Tier:
-                  </span>
-                  <span className="text-gray-700 font-bold">Minimum Balance: 0</span>
-                </div>
-                <div className="flex items-center justify-between pb-2 border-b border-gray-200">
-                  <span className="font-bold text-amber-700 flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                    Gold Tier:
-                  </span>
-                  <span className="text-gray-700 font-bold">Minimum Balance: 25,000</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-bold text-blue-700 flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-                    Platinum Tier:
-                  </span>
-                  <span className="text-gray-700 font-bold">Minimum Balance: 50,000</span>
-                </div>
-              </div>
-
-              <div className="p-3.5 bg-blue-50/80 rounded-2xl border border-blue-100 text-blue-900 space-y-1.5">
-                <strong className="block font-bold">Rule Evaluation Criteria:</strong>
-                <ul className="list-disc list-inside space-y-1 text-xs">
-                  <li>Benefits categorized under <strong>Experiences</strong> are unlocked immediately once the minimum balance is satisfied.</li>
-                  <li><strong>Unassigned Benefits</strong> (e.g. Fashion Bug 10% OFF) are universal privileges open to all registered Star Points members.</li>
-                  <li>Tier assessment is evaluated continuously with a 12-month retention grace period.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="pt-3 border-t border-gray-100 flex justify-end">
-              <button
-                type="button"
-                onClick={() => setSelectedRuleInfo(false)}
-                className="px-5 py-2.5 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition-colors cursor-pointer"
-              >
-                Close Rule Engine
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal 2: Benefit Detail Modal */}
+      {/* Modal: Benefit Detail Modal */}
       {selectedBenefitDetail && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-xs animate-in fade-in"

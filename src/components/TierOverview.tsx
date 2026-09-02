@@ -135,9 +135,9 @@ export const TierOverview: React.FC<TierOverviewProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center gap-1.5 text-gray-400 text-[11px]">
+          <div className="flex items-center gap-1.5 text-gray-500 text-[11px]">
             <Info className="w-3.5 h-3.5 shrink-0" />
-            <span>Minimum balance rules configured in member assessment engine.</span>
+            <span>Points thresholds and exclusive benefits are evaluated across loyalty tiers.</span>
           </div>
         </div>
       </section>
